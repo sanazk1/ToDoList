@@ -30,3 +30,4 @@ Once the application starts, the following main menu will be displayed as follow
 >> (3) Edit Task (update, mark as done, remove)
 
 >> (4) Save and Quit
+
