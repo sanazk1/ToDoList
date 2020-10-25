@@ -1,13 +1,13 @@
-com/company/entities/Reader.java
- com.company.entities.Reader
+com/company/constants/RegularExpressions.java
+ com.company.constants.RegularExpressions
 com/company/utilities/TaskSorter.java
  com.company.utilities.TaskSorter
-com/company/utilities/TaskHandler.java
- com.company.utilities.TaskHandler
+com/company/entities/Task.java
+ com.company.entities.Task
 com/company/constants/DateFormats.java
  com.company.constants.DateFormats
-com/company/Main.java
- com.company.Main
+com/company/utilities/TaskValidator.java
+ com.company.utilities.TaskValidator
 com/company/utilities/IOHandler.java
  com.company.utilities.IOHandler
 com/company/constants/Paths.java
@@ -22,11 +22,9 @@ com/company/constants/MenuOptions.java
  com.company.constants.MenuOptions
 com/company/utilities/FileHelper.java
  com.company.utilities.FileHelper
-com/company/constants/RegularExpressions.java
- com.company.constants.RegularExpressions
-com/company/utilities/TaskValidator.java
- com.company.utilities.TaskValidator
-com/company/entities/Task.java
- com.company.entities.Task
+com/company/utilities/TaskHandler.java
+ com.company.utilities.TaskHandler
+com/company/Main.java
+ com.company.Main
 com/company/UserInterface.java
  com.company.UserInterface
