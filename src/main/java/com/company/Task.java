@@ -1,9 +1,9 @@
 package com.company;
 
-//import java.util.ArrayList;
+import java.io.Serializable;
 
- class Task {
-
+class Task implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String description;
     private String title;
 
@@ -22,5 +22,8 @@ package com.company;
       public String toString()
       {
           return title + " --- " + description ;
-      }
-}
+
+        //return "Description:" + description  + "\nTitle: " + title;
+     }
+
+ }

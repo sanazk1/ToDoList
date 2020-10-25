@@ -3,66 +3,40 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class TaskHandler {
+public class TaskHandler {
     private Scanner scan = new Scanner(System.in);
     private ArrayList<Task> taskList = new ArrayList<Task>();
 
-    void run() {
-        boolean isRunning = true;
+
+        public TaskHandler() {
+         loadTasks();
+       }
 
 
-            while (isRunning) {
-                printMenu();
-                String option = scan.nextLine();
-                switch (option) {
-                    case "1":
-                        showTaskList();
-                        break;
-
-                    case "2":
-                        addTask();
-                        break;
-
-                    case "3":
-                        editTask();
-                        break;
-
-                    case "4":
-                        saveAndQuit();
-                        isRunning = false;
-                        break;
-
-                    default:
-                        System.out.println("Invalid option");
-
-                }
-            }
-        }
-        private void printMenu() {
-            System.out.println("Welcome to the to do list application");
-            System.out.println("Pick an option: ");
-            System.out.println(">> (1) Show Task List ");
-            System.out.println(">> (2) Add New Task");
-            System.out.println(">> (3) Edit Task (update, mark as done, remove)");
-            System.out.println(">> (4) Save and Quit");
+        public void saveAndQuit() {
+            Reader reader = new Reader();
+            reader.save(taskList);
         }
 
-        private void saveAndQuit() {
+        public void loadTasks() {
+         //load list from file and add them to the taskList
         }
 
-        private void showTaskList() {
-            //System.out.println(taskList);
+        public void showTaskList() {
             for (Task task : taskList) {
                 //System.out.println(task.toString()); // this is exactly similar to the next line
                 System.out.println(task);
             }
         }
-
-        private void editTask() {
+        public Task getTaskById(int index) {
+           return taskList.get(index);
+     }
+        public void editTask(int index, Task task) {
+            taskList.set(index - 1, task);
         }
 
 
-        private void addTask() {
+        public void addTask() {
             {
                 System.out.println("write the description of the task:");
                 String desc = scan.nextLine();
@@ -97,7 +71,7 @@ class TaskHandler {
             }
         }
 
-        private void taskAddedSuccessfully() {
+        public void taskAddedSuccessfully() {
             System.out.println("Your task has been added");
         }
     }
