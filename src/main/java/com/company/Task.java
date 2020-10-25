@@ -1,16 +1,15 @@
 package com.company;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Task {
 
     private String description;
-    private String title;
+    //private String title;
 
     Task(String description,String title){
         this.description=description;
         this.title=title;
-
     }
 
     public String getDescription() {
