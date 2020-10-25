@@ -53,19 +53,43 @@ public class TaskList {
 
 
     private void addTask() {
-        System.out.println("write the description of the task:");
-        String desc = scan.nextLine();
+        {
+            System.out.println("write the description of the task:");
+            String desc = scan.nextLine();
 
-        System.out.println("write the title of the task:");
-        String tit = scan.nextLine();
-        Task taskOne = new Task(desc, tit);
-        Task taskTwo = new Task(desc, tit);
+            System.out.println("write the title of the task:");
+            String tit = scan.nextLine();
+            //System.out.println(taskAddedSuccessfully());
+            int i = 0;
+            while (i > 1) {
+                System.out.println(">>Do you want to add one task more? Press Y for yes and N for no");
+                String select = scan.nextLine();
+                switch (select) {
+                    case "Y":
+                        addTask();
+                        break;
 
-        tasks.add(taskOne);
-        tasks.add(taskTwo);
-        System.out.println("Here is your description " + taskOne.getDescription());
+                    case "N":
+                        taskAddedSuccessfully();
+                        break;
 
+                    default:
+                        System.out.println("Invalid option");
+                }
+            }
+            i++;
+            Task taskOne = new Task(desc, tit);
 
+            tasks.add(taskOne);
+            System.out.println("Here is your description " + taskOne.getDescription());
+            System.out.println("Here is the title of your task " + taskOne.getTitle());
+
+           }
     }
+          private void taskAddedSuccessfully() {
+         System.out.println("Your task has been added");
+     }
+    };
 
-}
+
+
