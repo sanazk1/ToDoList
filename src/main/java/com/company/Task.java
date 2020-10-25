@@ -2,10 +2,10 @@ package com.company;
 
 //import java.util.ArrayList;
 
-public class Task {
+ class Task {
 
     private String description;
-    //private String title;
+    private String title;
 
     Task(String description,String title){
         this.description=description;
@@ -18,4 +18,9 @@ public class Task {
     public String getTitle() {
         return title;
     }
+    @Override
+      public String toString()
+      {
+          return title + " --- " + description ;
+      }
 }

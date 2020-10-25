@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class TaskHandler {
-     private Scanner scan = new Scanner(System.in);
-     private ArrayList tasks = new ArrayList<Task>();
+    private Scanner scan = new Scanner(System.in);
+    private ArrayList<Task> taskList = new ArrayList<Task>();
 
     void run() {
         boolean isRunning = true;
 
-        {
+
             while (isRunning) {
                 printMenu();
                 String option = scan.nextLine();
@@ -51,6 +51,11 @@ class TaskHandler {
         }
 
         private void showTaskList() {
+            //System.out.println(taskList);
+            for (Task task : taskList) {
+                //System.out.println(task.toString()); // this is exactly similar to the next line
+                System.out.println(task);
+            }
         }
 
         private void editTask() {
@@ -63,13 +68,17 @@ class TaskHandler {
                 String desc = scan.nextLine();
 
                 System.out.println("write the title of the task:");
-                String tit = scan.nextLine();
+                String tittle = scan.nextLine();
+                Task task = new Task(desc, tittle);
+                taskList.add(task);
+
                 taskAddedSuccessfully();
                 System.out.println();
+
                 boolean isRunning = true;
                 while (isRunning) {
                     System.out.println(">>Do you want to add one task more? Press Y for yes and N for no");
-                    String select = scan.nextLine();
+                    String select = scan.nextLine().toUpperCase();
                     switch (select) {
                         case "Y":
                             addTask();
@@ -87,9 +96,10 @@ class TaskHandler {
 
             }
         }
+
         private void taskAddedSuccessfully() {
             System.out.println("Your task has been added");
         }
-     }
+    }
 
 
