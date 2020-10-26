@@ -6,15 +6,33 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    mavenLocal()
+    jcenter()
     mavenCentral()
+
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+    // https://mvnrepository.com/artifact/junit/junit
+    //testCompile group: 'junit', name: 'junit', version: '4.13.1'
+
+    //implementation 'junit:junit:4.13.1'
+    implementation group: 'junit', name: 'junit', version: '4.13-beta-1'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    //testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '1.4'
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    //testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.5'
+    testCompile 'org.mockito:mockito-core:2.7.22'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+
 }
+
+
 
 test {
     useJUnitPlatform()
